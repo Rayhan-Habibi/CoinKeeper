@@ -1,9 +1,7 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import { View, Text, ImageBackground } from 'react-native';
+import { Image, StyleSheet } from 'react-native';
+import { View, Text, ScrollView} from 'react-native';
+import RecentTransactionComp from '@/components/RecentTransactionComp';
+import { Colors } from '@/constants/Colors';
 
 export default function HomeScreen() {
 
@@ -21,6 +19,13 @@ export default function HomeScreen() {
          </View>
          <Image source={require("../../assets/images/balance-background-edited.jpg")} style={style.imageContainerStyle}></Image>
       </View>
+      <View style={style.transactionSectionStyle}>
+        <Text style={style.transactionTextStyle}>Recent Transaction</Text>
+        <ScrollView style={style.test}>
+          <RecentTransactionComp />
+        </ScrollView>
+      </View>
+      
     </View>
   );
 }
@@ -31,9 +36,10 @@ const style = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#f6efdf",
     height: "30%",
-    width: "90%",
+    width: "85%",
     marginHorizontal: "auto",
-    marginTop: 20,
+    elevation: 10,
+    marginVertical: 20,
     borderRadius: 30,
     overflow: "hidden",
   },
@@ -52,11 +58,24 @@ const style = StyleSheet.create({
   },
   imageContainerStyle:{
     width: 200,
-    height: 200,
+    height: 250,
     
   },
   textContainerStyle:{
     padding: 20,
     paddingVertical: 25
+  },
+  transactionSectionStyle:{
+    marginHorizontal: 20,
+    marginVertical: 20,
+  },
+  transactionTextStyle: {
+    fontSize: 25,
+    color: Colors.light.text,
+    fontWeight: "bold",
+    marginBottom: 20
+  },
+  test:{
+   
   }
 })

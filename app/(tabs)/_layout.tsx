@@ -24,6 +24,7 @@ export default function TabLayout() {
      
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarInactiveTintColor: Colors.light.text,
         animation: "shift",
         tabBarStyle: {
          position: "absolute",
@@ -31,11 +32,21 @@ export default function TabLayout() {
          bottom: 15,
          left: 10,
          right: 10,
+         borderColor: "rrgba(255, 255, 255, 0.1)",
          height: 70,
          borderRadius: 25,
          paddingHorizontal: 5,
          elevation: 0
         },
+        headerShadowVisible: false,
+        headerStyle: {
+          backgroundColor: "#061934"
+        },
+        headerTitleStyle: {
+          color: "white",
+          fontSize: 25
+        },
+        headerTitleAlign: "center",
         tabBarIconStyle: {
           bottom: 15
         },
