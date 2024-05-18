@@ -6,7 +6,7 @@ import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import HomeScreen from '.';
 import TabTwoScreen from './explore';
-import { faChartPie } from '@fortawesome/free-solid-svg-icons/faChartPie'
+import { faReceipt } from '@fortawesome/free-solid-svg-icons/faReceipt'
 import { faPiggyBank } from '@fortawesome/free-solid-svg-icons/faPiggyBank'
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons/faCirclePlus'
 import { faGear } from '@fortawesome/free-solid-svg-icons/faGear'
@@ -71,9 +71,9 @@ export default function TabLayout() {
         name="Stats"
         component={TabTwoScreen}
         options={{
-          title: 'Stats',
+          title: 'Transactions',
           tabBarIcon: ({ color, focused, size }) => (
-            <FontAwesomeIcon icon={faChartPie} size={size} color={color}/>
+            <FontAwesomeIcon icon={faReceipt} size={size} color={color}/>
           ),
         }}
       />

@@ -1,9 +1,13 @@
-import { Image, StyleSheet } from 'react-native';
+import { Image, StyleSheet, Button } from 'react-native';
 import { View, Text, ScrollView} from 'react-native';
 import RecentTransactionComp from '@/components/RecentTransactionComp';
 import { Colors } from '@/constants/Colors';
+import { useSelector } from "react-redux"
+import { IRootState } from '@/data/store';
 
 export default function HomeScreen() {
+
+const balance = useSelector((state:IRootState) => state.money[0].balance)
 
   return (
     <View style={{flex: 1, backgroundColor: "#061934"}} >
@@ -11,9 +15,8 @@ export default function HomeScreen() {
          <View style={style.textContainerStyle}>
             <Text style={style.balanceTextStyle}>Balance</Text>
             <Text style={style.dateTextStyle}>24 December 2029</Text>
-            <Text style={style.moneyStyle}>$1,234.00</Text>
+            <Text style={style.moneyStyle}>${balance}</Text>
             <View>
-              <Text></Text>
               <Text></Text>
             </View>
          </View>
